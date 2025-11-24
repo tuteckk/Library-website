@@ -1,21 +1,58 @@
-// Function to handle the button click
+// 1. SEARCH FUNCTIONALITY LOGIC
+
+function filterBooks() {
+    // Get the search term and convert it to lower case for case-insensitive matching
+    const searchTerm = document.getElementById('search-input').value.toLowerCase();
+    
+    // Get all the book cards (the containers for each book)
+    const bookCards = document.querySelectorAll('.book-card');
+
+    bookCards.forEach(card => {
+        // Get the title and author text from inside the card
+        const title = card.querySelector('h3').textContent.toLowerCase();
+        const author = card.querySelector('p').textContent.toLowerCase();
+        
+        // Check if the search term is found in either the title or the author
+        // The includes() method is perfect for partial matching
+        if (title.includes(searchTerm) || author.includes(searchTerm)) {
+            // If there's a match, display the book card
+            card.style.display = 'block'; 
+        } else {
+            // If no match, hide the book card
+            card.style.display = 'none';
+        }
+    });
+}
+
+// Attach the function to the search button and the input field for instant searching
+
+// 1. Get the button element
+const searchButton = document.getElementById('search-btn');
+// Add an event listener for when the button is clicked
+searchButton.addEventListener('click', filterBooks);
+
+// 2. Get the input field
+const searchInput = document.getElementById('search-input');
+// Add an event listener for when the user types (key up event)
+searchInput.addEventListener('keyup', filterBooks);
+
+
+// ===================================
+// 2. EXISTING CTA BUTTON LOGIC
+// (Scrolls to the book list on click)
+// ===================================
+
 function handleCtaClick() {
-    // Scroll down to the featured books section
     document.getElementById('featured-books').scrollIntoView({
         behavior: 'smooth'
     });
-
-    // You could also show a message, log, or change content here
     console.log("User started browsing!");
 }
 
-// Get the button element by its ID
 const ctaButton = document.getElementById('cta-button');
-
-// Add an event listener to run the function when the button is clicked
 ctaButton.addEventListener('click', handleCtaClick);
 
-// Example of adding functionality to all 'Read Now' buttons
+// Existing 'Read Now' button alert
 document.querySelectorAll('.read-btn').forEach(button => {
     button.addEventListener('click', () => {
         alert("You clicked 'Read Now'! (This would open the book viewer)");
