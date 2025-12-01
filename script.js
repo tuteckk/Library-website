@@ -9,7 +9,6 @@ function filterBooks() {
 
     bookCards.forEach(card => {
         // Get the title, author, and genre/year text from inside the card
-        // We use :nth-child(2) and :nth-child(3) to accurately select the correct paragraphs
         const title = card.querySelector('h3').textContent.toLowerCase();
         const author = card.querySelector('p:nth-child(2)').textContent.toLowerCase();
         const details = card.querySelector('p:nth-child(3)').textContent.toLowerCase();
@@ -34,24 +33,7 @@ searchInput.addEventListener('keyup', filterBooks);
 
 
 
-// 2. CTA BUTTON LOGIC (Home Page)
-
-
-function handleCtaClick() {
-    // Navigates from index.html to browse.html
-    window.location.href = 'browse.html';
-    console.log("User started browsing!");
-}
-
-// Check if the button exists before attaching the listener (it only exists on index.html)
-const ctaButton = document.getElementById('cta-button');
-if (ctaButton) {
-    ctaButton.addEventListener('click', handleCtaClick);
-}
-
-
-
-// 3. READ NOW BUTTON LOGIC (Browse Page)
+// 2. READ NOW BUTTON LOGIC (Browse Page)
 
 
 const bookViewer = document.getElementById('book-viewer');
@@ -66,7 +48,6 @@ document.querySelectorAll('.read-btn').forEach(button => {
 
         // Extract book details from the card elements
         const title = card.querySelector('h3').textContent;
-        // Clean up the text content for display
         const author = card.querySelector('p:nth-child(2)').textContent.replace('Author: ', '');
         const detailsText = card.querySelector('p:nth-child(3)').textContent;
         
@@ -79,4 +60,19 @@ document.querySelectorAll('.read-btn').forEach(button => {
         // Update the book viewer section with details
         document.getElementById('viewer-title').textContent = title;
         document.getElementById('viewer-author').textContent = author;
-        document.getElementById
+        document.getElementById('viewer-genre').textContent = genre.replace('Genre: ', '');
+        document.getElementById('viewer-year').textContent = year.replace('Year: ', '');
+        document.getElementById('viewer-description').textContent = description;
+
+        // Show the viewer and scroll to it
+        bookViewer.style.display = 'block';
+        bookViewer.scrollIntoView({ behavior: 'smooth' });
+    });
+});
+
+// Listener for the new 'Close Book' button
+if (viewerCloseBtn) {
+    viewerCloseBtn.addEventListener('click', () => {
+        bookViewer.style.display = 'none';
+    });
+}
