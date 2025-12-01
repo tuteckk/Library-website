@@ -143,3 +143,50 @@ footer {
 .cta-link:hover {
     background-color: #5D4037;
 }
+
+/* --- DARK THEME STYLES --- */
+body.dark-theme {
+    background-color: #2e2c2f; /* Very dark charcoal background */
+    color: #f0f0f0; /* Light text */
+}
+
+body.dark-theme header {
+    background-color: #4a3e3d; /* Dark reddish brown for header */
+}
+
+body.dark-theme nav li a:hover {
+    background-color: #60504d;
+}
+
+body.dark-theme footer {
+    background-color: #4a3e3d; /* Dark reddish brown for footer */
+}
+
+body.dark-theme .book-card {
+    background-color: #3f3e40; /* Darker card background */
+    border-color: #555;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-theme h2, body.dark-theme h3 {
+    color: #fff; /* Ensure headings are bright white */
+}
+
+body.dark-theme .search-container #search-input {
+    background-color: #505050;
+    color: #f0f0f0;
+}
+
+/* Override inline styles for dark theme compatibility */
+body.dark-theme #quick-stats {
+    background-color: #3f3e40 !important;
+    border: none !important;
+}
+body.dark-theme #quick-stats h2 {
+    color: #B79C6E !important; /* Keep the gold accent */
+}
+
+body.dark-theme #book-viewer {
+    background-color: #3f3e40 !important;
+    border: 1px solid #5d4037 !important;
+}
