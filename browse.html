@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Online Library - Browse</title>
     <link rel="stylesheet" href="style.css">
-</head>
+    </head>
 <body>
 
     <header>
@@ -25,40 +25,419 @@
      </header>
 
     <main>
+        <section id="book-viewer" style="display:none; padding: 20px; border: 1px solid #007bff; border-radius: 8px; margin-bottom: 20px; background-color: #e9f5ff;">
+            <h3>Currently Reading: <span id="viewer-title"></span></h3>
+            <p>Author: <span id="viewer-author"></span></p>
+            <p>Genre: <span id="viewer-genre"></span></p>
+            <p>Year: <span id="viewer-year"></span></p>
+            <h4>Description:</h4>
+            <p id="viewer-description"></p>
+            <button id="viewer-close-btn" style="background-color: #dc3545;">Close Book</button>
+        </section>
+        
         <section id="featured-books">
-            <h2>All Available Titles</h2>
+            <h2>All Available Titles (50 Books)</h2>
             <div class="book-list">
-                <div class="book-card">
-                    <h3>The Great Novel</h3>
-                    <p>Author: Jane Doe</p>
+                <div class="book-card" data-book-id="1">
+                    <h3>The Zero-Sum Equation</h3>
+                    <p>Author: Elias Thorne</p>
+                    <p>Genre: Sci-Fi | Year: 2045</p>
+                    <div class="book-description" style="display:none;">A mathematician discovers a glitch in reality that threatens to erase all past events.</div>
                     <button class="read-btn">Read Now</button>
                 </div>
-                <div class="book-card">
-                    <h3>Coding 101</h3>
-                    <p>Author: John Smith</p>
+
+                <div class="book-card" data-book-id="2">
+                    <h3>The Whispering Isle</h3>
+                    <p>Author: Rhys Sterling</p>
+                    <p>Genre: Fantasy | Year: 2012</p>
+                    <div class="book-description" style="display:none;">A young cartographer finds a hidden continent where magic is woven into the weather.</div>
                     <button class="read-btn">Read Now</button>
                 </div>
-                <div class="book-card">
-                    <h3>Epic Fantasy Saga</h3>
-                    <p>Author: R.R. Genius</p>
+
+                <div class="book-card" data-book-id="3">
+                    <h3>The Gilded Hand</h3>
+                    <p>Author: Elara Vance</p>
+                    <p>Genre: Mystery | Year: 1928</p>
+                    <div class="book-description" style="display:none;">A private investigator in Prohibition-era Chicago hunts for a missing diamond and a deadly secret.</div>
                     <button class="read-btn">Read Now</button>
                 </div>
-                <div class="book-card">
-                    <h3>Future of AI</h3>
-                    <p>Author: Mark Tech</p>
+
+                <div class="book-card" data-book-id="4">
+                    <h3>Sleeper Agent</h3>
+                    <p>Author: Marcus Vega</p>
+                    <p>Genre: Thriller | Year: 2023</p>
+                    <div class="book-description" style="display:none;">An amnesiac woman realizes she is a highly trained operative being hunted by her former handler.</div>
                     <button class="read-btn">Read Now</button>
                 </div>
-                <div class="book-card">
-                    <h3>Space Travel Guide</h3>
-                    <p>Author: Jane Doe</p>
+
+                <div class="book-card" data-book-id="5">
+                    <h3>Silk Road Shadows</h3>
+                    <p>Author: Mei Lin</p>
+                    <p>Genre: Historical Fiction | Year: 1340</p>
+                    <div class="book-description" style="display:none;">A Persian merchant navigates the treacherous politics and plague along the ancient trade route.</div>
                     <button class="read-btn">Read Now</button>
                 </div>
-                <div class="book-card">
-                    <h3>Cooking for Beginners</h3>
-                    <p>Author: Gordon Chef</p>
+
+                <div class="book-card" data-book-id="6">
+                    <h3>Beneath the Autumn Sky</h3>
+                    <p>Author: Nora Bell</p>
+                    <p>Genre: Romance | Year: 2018</p>
+                    <div class="book-description" style="display:none;">Two childhood rivals reconnect years later to save a beloved, dilapidated community center.</div>
                     <button class="read-btn">Read Now</button>
                 </div>
-            </div>
+
+                <div class="book-card" data-book-id="7">
+                    <h3>The Iron Tribunal</h3>
+                    <p>Author: James Sunderland</p>
+                    <p>Genre: Dystopian | Year: 2060</p>
+                    <div class="book-description" style="display:none;">Citizens live under the thumb of an AI judge, until one hacker finds a way to appeal the system.</div>
+                    <button class="read-btn">Read Now</button>
+                </div>
+
+                <div class="book-card" data-book-id="8">
+                    <h3>The Language of Stone</h3>
+                    <p>Author: Isabelle Moreau</p>
+                    <p>Genre: Literary Fiction | Year: 1972</p>
+                    <div class="book-description" style="display:none;">A contemplative novel about an architect who finds solace and meaning in the history of buildings.</div>
+                    <button class="read-btn">Read Now</button>
+                </div>
+
+                <div class="book-card" data-book-id="9">
+                    <h3>Labyrinth of the Mind</h3>
+                    <p>Author: Victor Thorne</p>
+                    <p>Genre: Horror | Year: 2005</p>
+                    <div class="book-description" style="display:none;">A neuroscientist volunteers for an experimental sleep study that traps him in a shared, terrifying nightmare.</div>
+                    <button class="read-btn">Read Now</button>
+                </div>
+
+                <div class="book-card" data-book-id="10">
+                    <h3>The Star Weaver</h3>
+                    <p>Author: Cassandra Bloom</p>
+                    <p>Genre: Young Adult | Year: 2017</p>
+                    <div class="book-description" style="display:none;">A teenage girl discovers she can manipulate starlight and must use her power to save her small town.</div>
+                    <button class="read-btn">Read Now</button>
+                </div>
+
+                <div class="book-card" data-book-id="11">
+                    <h3>Sentinel Gate</h3>
+                    <p>Author: Julian Price</p>
+                    <p>Genre: Sci-Fi | Year: 2130</p>
+                    <div class="book-description" style="display:none;">An exploratory crew crosses a newly discovered wormhole, leading to an immediate galactic conflict.</div>
+                    <button class="read-btn">Read Now</button>
+                </div>
+
+                <div class="book-card" data-book-id="12">
+                    <h3>The Cinder Court</h3>
+                    <p>Author: Seraphina Moon</p>
+                    <p>Genre: Fantasy | Year: 1895</p>
+                    <div class="book-description" style="display:none;">A humble kitchen maid discovers she is the rightful heir to a magical kingdom ruled by fire spirits.</div>
+                    <button class="read-btn">Read Now</button>
+                </div>
+
+                <div class="book-card" data-book-id="13">
+                    <h3>Blind Spot</h3>
+                    <p>Author: David Chen</p>
+                    <p>Genre: Mystery | Year: 2021</p>
+                    <div class="book-description" style="display:none;">A celebrated journalist witnesses a crime but can't remember the face of the perpetrator.</div>
+                    <button class="read-btn">Read Now</button>
+                </div>
+
+                <div class="book-card" data-book-id="14">
+                    <h3>The Fourth Protocol</h3>
+                    <p>Author: Ethan Hunt</p>
+                    <p>Genre: Thriller | Year: 2015</p>
+                    <div class="book-description" style="display:none;">A cybersecurity expert must race against the clock to prevent a global infrastructure shutdown.</div>
+                    <button class="read-btn">Read Now</button>
+                </div>
+
+                <div class="book-card" data-book-id="15">
+                    <h3>Daughters of the Manor</h3>
+                    <p>Author: Penelope Fae</p>
+                    <p>Genre: Historical Fiction | Year: 1815</p>
+                    <div class="book-description" style="display:none;">A sweeping saga of two sisters vying for social standing and true love in Regency England.</div>
+                    <button class="read-btn">Read Now</button>
+                </div>
+
+                <div class="book-card" data-book-id="16">
+                    <h3>Lighthouse Keeper</h3>
+                    <p>Author: Chloe Green</p>
+                    <p>Genre: Romance | Year: 2020</p>
+                    <div class="book-description" style="display:none;">A widow finds unexpected romance with the mysterious new keeper of the isolated coastal lighthouse.</div>
+                    <button class="read-btn">Read Now</button>
+                </div>
+
+                <div class="book-card" data-book-id="17">
+                    <h3>The Great Isolation</h3>
+                    <p>Author: David Chen</p>
+                    <p>Genre: Dystopian | Year: 2055</p>
+                    <div class="book-description" style="display:none;">The world is divided into safe zones, and a young scavenger seeks passage across the hostile border.</div>
+                    <button class="read-btn">Read Now</button>
+                </div>
+
+                <div class="book-card" data-book-id="18">
+                    <h3>The Weight of Years</h3>
+                    <p>Author: Oliver King</p>
+                    <p>Genre: Literary Fiction | Year: 2024</p>
+                    <div class="book-description" style="display:none;">An intergenerational tale focusing on how small decisions impact a family across five decades.</div>
+                    <button class="read-btn">Read Now</button>
+                </div>
+
+                <div class="book-card" data-book-id="19">
+                    <h3>Skinwalkers' Trail</h3>
+                    <p>Author: Finn O'Connell</p>
+                    <p>Genre: Horror | Year: 1988</p>
+                    <div class="book-description" style="display:none;">A camping trip in the Arizona desert turns deadly as the friends realize they are being hunted by local folklore creatures.</div>
+                    <button class="read-btn">Read Now</button>
+                </div>
+
+                <div class="book-card" data-book-id="20">
+                    <h3>Skyward Bound</h3>
+                    <p>Author: Amelia Hayes</p>
+                    <p>Genre: Young Adult | Year: 2023</p>
+                    <div class="book-description" style="display:none;">Teens compete in a perilous aerial race around the globe, where only the strongest survive.</div>
+                    <button class="read-btn">Read Now</button>
+                </div>
+
+                <div class="book-card" data-book-id="21">
+                    <h3>Memory Echoes</h3>
+                    <p>Author: Eva Rodriguez</p>
+                    <p>Genre: Sci-Fi | Year: 2080</p>
+                    <div class="book-description" style="display:none;">Technology allows people to experience the memories of others, blurring the lines of identity.</div>
+                    <button class="read-btn">Read Now</button>
+                </div>
+
+                <div class="book-card" data-book-id="22">
+                    <h3>The Last Rune</h3>
+                    <p>Author: Gideon Thorne</p>
+                    <p>Genre: Fantasy | Year: 2010</p>
+                    <div class="book-description" style="display:none;">A disillusioned warrior is tasked with protecting the final source of ancient magic from a dark cult.</div>
+                    <button class="read-btn">Read Now</button>
+                </div>
+
+                <div class="book-card" data-book-id="23">
+                    <h3>The Silent Portrait</h3>
+                    <p>Author: Leon Dubois</p>
+                    <p>Genre: Mystery | Year: 1947</p>
+                    <div class="book-description" style="display:none;">A French art restorer realizes a famous painting holds clues to a post-WWII espionage plot.</div>
+                    <button class="read-btn">Read Now</button>
+                </div>
+
+                <div class="book-card" data-book-id="24">
+                    <h3>The Deep End</h3>
+                    <p>Author: Hannah Lee</p>
+                    <p>Genre: Thriller | Year: 2022</p>
+                    <div class="book-description" style="display:none;">A disgraced former Olympic swimmer is pulled back into the spotlight when a body is found in the city pool.</div>
+                    <button class="read-btn">Read Now</button>
+                </div>
+
+                <div class="book-card" data-book-id="25">
+                    <h3>The Empress's Jade</h3>
+                    <p>Author: Genghis Khan</p>
+                    <p>Genre: Historical Fiction | Year: 700</p>
+                    <div class="book-description" style="display:none;">The rise and fall of a powerful Tang Dynasty Empress as seen through the eyes of her personal servant.</div>
+                    <button class="read-btn">Read Now</button>
+                </div>
+
+                <div class="book-card" data-book-id="26">
+                    <h3>Star Crossed Lines</h3>
+                    <p>Author: Jasmine Adebayo</p>
+                    <p>Genre: Romance | Year: 2020</p>
+                    <div class="book-description" style="display:none;">A witty editor is forced to collaborate with a grumpy sci-fi writer on a cross-genre project.</div>
+                    <button class="read-btn">Read Now</button>
+                </div>
+
+                <div class="book-card" data-book-id="27">
+                    <h3>Chronicle of Dust</h3>
+                    <p>Author: Rex Krell</p>
+                    <p>Genre: Dystopian | Year: 2101</p>
+                    <div class="book-description" style="display:none;">Earth is covered in toxic fallout, and civilization survives in massive underground vault-cities.</div>
+                    <button class="read-btn">Read Now</button>
+                </div>
+
+                <div class="book-card" data-book-id="28">
+                    <h3>The Unspoken Truth</h3>
+                    <p>Author: Lena Petrov</p>
+                    <p>Genre: Literary Fiction | Year: 2025</p>
+                    <div class="book-description" style="display:none;">A powerful novel examining the complex dynamics of a seemingly perfect family vacation.</div>
+                    <button class="read-btn">Read Now</button>
+                </div>
+
+                <div class="book-card" data-book-id="29">
+                    <h3>The Shadow Box</h3>
+                    <p>Author: Arthur Finch</p>
+                    <p>Genre: Horror | Year: 1888</p>
+                    <div class="book-description" style="display:none;">A Victorian gentleman collects cursed objects, which begin to exert a dark, malevolent influence.</div>
+                    <button class="read-btn">Read Now</button>
+                </div>
+
+                <div class="book-card" data-book-id="30">
+                    <h3>Monarch High</h3>
+                    <p>Author: Sara Jensen</p>
+                    <p>Genre: Young Adult | Year: 2011</p>
+                    <div class="book-description" style="display:none;">A diverse group of high school students must put aside their differences to expose corruption at their elite school.</div>
+                    <button class="read-btn">Read Now</button>
+                </div>
+
+                <div class="book-card" data-book-id="31">
+                    <h3>Project Chimera</h3>
+                    <p>Author: Marco Cruz</p>
+                    <p>Genre: Sci-Fi | Year: 2150</p>
+                    <div class="book-description" style="display:none;">Genetic engineering has spiraled out of control, creating hybrid soldiers with unpredictable loyalty.</div>
+                    <button class="read-btn">Read Now</button>
+                </div>
+
+                <div class="book-card" data-book-id="32">
+                    <h3>The Thieves' Guild</h3>
+                    <p>Author: Oliver King</p>
+                    <p>Genre: Fantasy | Year: 2001</p>
+                    <div class="book-description" style="display:none;">A master pickpocket is forced into the role of savior after accidentally stealing a magical artifact.</div>
+                    <button class="read-btn">Read Now</button>
+                </div>
+
+                <div class="book-card" data-book-id="33">
+                    <h3>The Ferryman</h3>
+                    <p>Author: Ben Carter</p>
+                    <p>Genre: Mystery | Year: 1995</p>
+                    <div class="book-description" style="display:none;">A small-town police chief investigates a series of murders linked to a local river and its moody ferry operator.</div>
+                    <button class="read-btn">Read Now</button>
+                </div>
+
+                <div class="book-card" data-book-id="34">
+                    <h3>The Insider Threat</h3>
+                    <p>Author: Simon Case</p>
+                    <p>Genre: Thriller | Year: 2019</p>
+                    <div class="book-description" style="display:none;">A corporate lawyer uncovers massive fraud that goes all the way to the top of her global firm.</div>
+                    <button class="read-btn">Read Now</button>
+                </div>
+
+                <div class="book-card" data-book-id="35">
+                    <h3>Beneath Italian Skies</h3>
+                    <p>Author: Luca Rossi</p>
+                    <p>Genre: Historical Fiction | Year: 1943</p>
+                    <div class="book-description" style="display:none;">The story of a young man secretly aiding Jewish families escape occupied Rome.</div>
+                    <button class="read-btn">Read Now</button>
+                </div>
+
+                <div class="book-card" data-book-id="36">
+                    <h3>The Unexpected Heir</h3>
+                    <p>Author: Mia Flores</p>
+                    <p>Genre: Romance | Year: 2016</p>
+                    <div class="book-description" style="display:none;">A struggling artist inherits a sprawling Scottish castle and clashes with the resident, handsome groundskeeper.</div>
+                    <button class="read-btn">Read Now</button>
+                </div>
+
+                <div class="book-card" data-book-id="37">
+                    <h3>The Gridlocked</h3>
+                    <p>Author: Hiroshi Sato</p>
+                    <p>Genre: Dystopian | Year: 2077</p>
+                    <div class="book-description" style="display:none;">Citizens are permanently tethered to the city's digital network, but one group seeks to disconnect.</div>
+                    <button class="read-btn">Read Now</button>
+                </div>
+
+                <div class="book-card" data-book-id="38">
+                    <h3>The Last Postcard</h3>
+                    <p>Author: Sarah Klein</p>
+                    <p>Genre: Literary Fiction | Year: 2020</p>
+                    <div class="book-description" style="display:none;">A woman attempts to retrace the steps of her grandmother using only a series of cryptic vintage postcards.</div>
+                    <button class="read-btn">Read Now</button>
+                </div>
+
+                <div class="book-card" data-book-id="39">
+                    <h3>The Crooked Spire</h3>
+                    <p>Author: Julian Price</p>
+                    <p>Genre: Horror | Year: 1650</p>
+                    <div class="book-description" style="display:none;">A historical village is tormented by a series of monstrous appearances following a local witch trial.</div>
+                    <button class="read-btn">Read Now</button>
+                </div>
+
+                <div class="book-card" data-book-id="40">
+                    <h3>The Cursed Legacy</h3>
+                    <p>Author: David Chen</p>
+                    <p>Genre: Young Adult | Year: 2019</p>
+                    <div class="book-description" style="display:none;">Two high school rivals must team up to break a generations-old curse placed upon their families.</div>
+                    <button class="read-btn">Read Now</button>
+                </div>
+
+                <div class="book-card" data-book-id="41">
+                    <h3>Deep Space Drift</h3>
+                    <p>Author: Rex Krell</p>
+                    <p>Genre: Sci-Fi | Year: 2101</p>
+                    <div class="book-description" style="display:none;">A lone freighter captain finds an abandoned alien vessel with technology far beyond human comprehension.</div>
+                    <button class="read-btn">Read Now</button>
+                </div>
+
+                <div class="book-card" data-book-id="42">
+                    <h3>The Shadow King</h3>
+                    <p>Author: Seraphina Moon</p>
+                    <p>Genre: Fantasy | Year: 2012</p>
+                    <div class="book-description" style="display:none;">A rebellion rises against a tyrannical ruler who uses darkness magic to control his subjects.</div>
+                    <button class="read-btn">Read Now</button>
+                </div>
+
+                <div class="book-card" data-book-id="43">
+                    <h3>Echo Chamber</h3>
+                    <p>Author: Hannah Lee</p>
+                    <p>Genre: Mystery | Year: 2024</p>
+                    <div class="book-description" style="display:none;">A podcaster investigates a decade-old missing person case and starts receiving strange, anonymous messages.</div>
+                    <button class="read-btn">Read Now</button>
+                </div>
+
+                <div class="book-card" data-book-id="44">
+                    <h3>Firewall</h3>
+                    <p>Author: Marcus Vega</p>
+                    <p>Genre: Thriller | Year: 2007</p>
+                    <div class="book-description" style="display:none;">The director of the National Security Agency becomes the target of an unknown, brilliant foreign agent.</div>
+                    <button class="read-btn">Read Now</button>
+                </div>
+
+                <div class="book-card" data-book-id="45">
+                    <h3>The Tea Master's Code</h3>
+                    <p>Author: Kenjiro Tsuda</p>
+                    <p>Genre: Historical Fiction | Year: 1925</p>
+                    <div class="book-description" style="display:none;">A Japanese family tries to preserve their ancient tea ceremony traditions amidst rapid modernization.</div>
+                    <button class="read-btn">Read Now</button>
+                </div>
+
+                <div class="book-card" data-book-id="46">
+                    <h3>The Paris Pact</h3>
+                    <p>Author: Eleanor Vance</p>
+                    <p>Genre: Romance | Year: 1968</p>
+                    <div class="book-description" style="display:none;">A young American diplomat and a French journalist fall in love during the Cold War tension in Paris.</div>
+                    <button class="read-btn">Read Now</button>
+                </div>
+
+                <div class="book-card" data-book-id="47">
+                    <h3>The Memory Tax</h3>
+                    <p>Author: James Sunderland</p>
+                    <p>Genre: Dystopian | Year: 2050</p>
+                    <div class="book-description" style="display:none;">Citizens must pay a fee to keep their personal memories, leading to a black market for remembrance.</div>
+                    <button class="read-btn">Read Now</button>
+                </div>
+
+                <div class="book-card" data-book-id="48">
+                    <h3>One Perfect Day</h3>
+                    <p>Author: Chloe Green</p>
+                    <p>Genre: Literary Fiction | Year: 2023</p>
+                    <div class="book-description" style="display:none;">A deeply emotional look at a single, pivotal day in the lives of five strangers living in the same neighborhood.</div>
+                    <button class="read-btn">Read Now</button>
+                </div>
+
+                <div class="book-card" data-book-id="49">
+                    <h3>When the Tide Turns</h3>
+                    <p>Author: Victor Thorne</p>
+                    <p>Genre: Horror | Year: 1955</p>
+                    <div class="book-description" style="display:none;">A group of friends vacationing at a beach house realize the ocean is actively hostile to human life.</div>
+                    <button class="read-btn">Read Now</button>
+                </div>
+
+                <div class="book-card" data-book-id="50">
+                    <h3>Out of the Woods</h3>
+                    <p>Author: Mia Flores</p>
+                    <p>Genre: Young Adult | Year: 2016</p>
+                    <div class="book-description" style="display:none;">A girl who was rescued after being lost in the wilderness struggles to adapt to normal life while hiding a magical secret.</div>
+                    <button class="read-btn">Read Now</button>
+                </div>
+                </div>
         </section>
     </main>
 
