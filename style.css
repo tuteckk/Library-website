@@ -3,18 +3,19 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #FAF0E6; /* New: Linen/Pale Tan for a soft, earthy background */
     color: #333;
 }
 
 /* Header Styling */
 header {
-    background-color: #007bff; /* Library Blue */
+    background-color: #A0522D; /* New: Sienna / Terracotta Primary Color */
     color: white;
     padding: 1em 2em;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
 }
 
 /* Navigation Styling */
@@ -33,7 +34,7 @@ nav li a {
 }
 
 nav li a:hover {
-    background-color: #0056b3;
+    background-color: #8B4513; /* New: Saddle Brown for hover */
     border-radius: 5px;
 }
 
@@ -61,7 +62,7 @@ main {
 
 /* Button Styling */
 button {
-    background-color: #28a745; /* Green Button */
+    background-color: #8D6E63; /* Muted Cocoa Brown (kept from previous earth palette) */
     color: white;
     border: none;
     padding: 10px 15px;
@@ -71,12 +72,12 @@ button {
 }
 
 button:hover {
-    background-color: #1e7e34;
+    background-color: #5D4037; /* Darker Brown for hover (kept) */
 }
 
 /* Footer Styling */
 footer {
-    background-color: #333;
+    background-color: #8B4513; /* New: Saddle Brown for Footer */
     color: white;
     text-align: center;
     padding: 1em 0;
@@ -89,41 +90,36 @@ footer {
 .search-container {
     display: flex;
     align-items: center;
-    /* This pushes the search bar to the center in the flex layout */
     margin: 0 20px; 
-    flex-grow: 1; /* Allows it to take up more space */
+    flex-grow: 1;
     max-width: 500px;
 }
 
 #search-input {
     padding: 10px;
     border: none;
-    border-radius: 5px 0 0 5px; /* Round left corners only */
+    border-radius: 5px 0 0 5px;
     width: 100%;
     font-size: 16px;
 }
 
 #search-btn {
-    background-color: #ffc107; /* Yellow/Gold for visibility */
+    background-color: #B79C6E; /* Muted Gold/Brass (kept) */
     color: #333;
     border: none;
     padding: 10px 15px;
-    border-radius: 0 5px 5px 0; /* Round right corners only */
+    border-radius: 0 5px 5px 0;
     cursor: pointer;
-    margin-top: 0; /* Override previous button style margin */
+    margin-top: 0;
     font-weight: bold;
 }
 
 #search-btn:hover {
-    background-color: #e0a800;
+    background-color: #A1887F; /* Muted Darker Brown for hover (kept) */
 }
 
-/* Adjust the header layout to accommodate the search bar */
-header {
-    /* Keep existing styles, just ensure there's enough space */
-    padding: 1em 2em;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px; /* Space between the elements */
+/* Book Viewer Styling (on browse.html) */
+#book-viewer {
+    background-color: #FFF8E1 !important; /* New: Very Pale Cream */
+    border: 1px solid #A0522D !important; /* Border matches the new Terracotta primary color */
 }
