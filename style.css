@@ -3,13 +3,13 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #FAF0E6; /* New: Linen/Pale Tan for a soft, earthy background */
+    background-color: #FAF0E6; /* Linen/Pale Tan for a soft, earthy background */
     color: #333;
 }
 
 /* Header Styling */
 header {
-    background-color: #A0522D; /* New: Sienna / Terracotta Primary Color */
+    background-color: #A0522D; /* Sienna / Terracotta Primary Color */
     color: white;
     padding: 1em 2em;
     display: flex;
@@ -34,13 +34,17 @@ nav li a {
 }
 
 nav li a:hover {
-    background-color: #8B4513; /* New: Saddle Brown for hover */
+    background-color: #8B4513; /* Saddle Brown for hover */
     border-radius: 5px;
 }
 
 /* Main Content Layout */
 main {
     padding: 20px;
+    /* 💥 FIX: Add padding to the bottom of the main content 
+       The footer is about 40px tall (1em padding + line height). 
+       55px ensures the last books are visible above the footer. */
+    padding-bottom: 55px; 
 }
 
 /* Featured Books Section */
@@ -77,11 +81,13 @@ button:hover {
 
 /* Footer Styling */
 footer {
-    background-color: #8B4513; /* New: Saddle Brown for Footer */
+    background-color: #8B4513; /* Saddle Brown for Footer */
     color: white;
     text-align: center;
     padding: 1em 0;
-    position: fixed;
+    /* 💥 FIX: Removed 'position: fixed' to allow content to flow naturally 
+       and stop covering the last elements. */
+    position: static; 
     bottom: 0;
     width: 100%;
 }
@@ -120,8 +126,8 @@ footer {
 
 /* Book Viewer Styling (on browse.html) */
 #book-viewer {
-    background-color: #FFF8E1 !important; /* New: Very Pale Cream */
-    border: 1px solid #A0522D !important; /* Border matches the new Terracotta primary color */
+    background-color: #FFF8E1 !important; /* Very Pale Cream */
+    border: 1px solid #A0522D !important; /* Border matches the Terracotta primary color */
 }
 
 /* Styling for the CTA link (Start Browsing) to make it look like a button */
