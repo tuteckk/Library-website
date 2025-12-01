@@ -76,3 +76,33 @@ if (viewerCloseBtn) {
         bookViewer.style.display = 'none';
     });
 }
+
+
+// 3. DARK THEME TOGGLE LOGIC
+
+
+const themeToggle = document.getElementById('dark-mode-toggle');
+const body = document.body;
+
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        // Toggle the 'dark-theme' class on the body
+        body.classList.toggle('dark-theme');
+
+        // Optional: Save the user's preference in their browser (local storage)
+        if (body.classList.contains('dark-theme')) {
+            localStorage.setItem('theme', 'dark');
+            themeToggle.textContent = '☀️ Light Theme';
+        } else {
+            localStorage.setItem('theme', 'light');
+            themeToggle.textContent = '🌙 Dark Theme';
+        }
+    });
+
+    // Check for saved preference when the page loads
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        body.classList.add('dark-theme');
+        themeToggle.textContent = '☀️ Light Theme';
+    }
+}
