@@ -41,8 +41,7 @@ nav li a:hover {
 /* Main Content Layout */
 main {
     padding: 20px;
-    /* 💥 FIX: Significantly increased padding at the bottom (70px) 
-       This ensures the content is pushed far enough above the footer. */
+    /* Fixed padding at the bottom to clear the footer */
     padding-bottom: 70px; 
 }
 
@@ -84,7 +83,6 @@ footer {
     color: white;
     text-align: center;
     padding: 1em 0;
-    /* Removed 'position: fixed' - Footer flows naturally at the bottom */
     position: static; 
     width: 100%;
 }
@@ -92,7 +90,8 @@ footer {
 /* Search Bar Styling */
 .search-container {
     display: flex;
-    align-items: center;
+    /* FIX 1: Ensures items are perfectly centered vertically within the container */
+    align-items: center; 
     margin: 0 20px; 
     flex-grow: 1;
     max-width: 500px;
@@ -102,6 +101,8 @@ footer {
     padding: 10px;
     border: none;
     border-radius: 5px 0 0 5px;
+    /* FIX 2: Set box-sizing to include padding in the final element height */
+    box-sizing: border-box; 
     width: 100%;
     font-size: 16px;
 }
@@ -113,12 +114,12 @@ footer {
     padding: 10px 15px;
     border-radius: 0 5px 5px 0;
     cursor: pointer;
-    margin-top: 0;
+    /* Removed default button margin */
+    margin-top: 0; 
     font-weight: bold;
-}
-
-#search-btn:hover {
-    background-color: #A1887F; /* Muted Darker Brown for hover */
+    /* FIX 3: Explicitly set height to match the input + padding */
+    height: 40px; 
+    flex-shrink: 0;
 }
 
 /* Book Viewer Styling (on browse.html) */
@@ -127,7 +128,7 @@ footer {
     border: 1px solid #A0522D !important; /* Border matches the Terracotta primary color */
 }
 
-/* Styling for the browsing link (Start Browsing) to make it look like a button */
+/* Styling for the CTA link (Start Browsing) to make it look like a button */
 .cta-link {
     background-color: #8D6E63; /* Same as other buttons */
     color: white;
