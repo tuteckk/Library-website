@@ -60,9 +60,9 @@ main {
     text-align: center;
 }
 
-/* Button Styling */
+/* Button Styling (Used for Read Now and Close Book) */
 button {
-    background-color: #8D6E63; /* Muted Cocoa Brown (kept from previous earth palette) */
+    background-color: #8D6E63; /* Muted Cocoa Brown */
     color: white;
     border: none;
     padding: 10px 15px;
@@ -72,7 +72,7 @@ button {
 }
 
 button:hover {
-    background-color: #5D4037; /* Darker Brown for hover (kept) */
+    background-color: #5D4037; /* Darker Brown for hover */
 }
 
 /* Footer Styling */
@@ -104,7 +104,7 @@ footer {
 }
 
 #search-btn {
-    background-color: #B79C6E; /* Muted Gold/Brass (kept) */
+    background-color: #B79C6E; /* Muted Gold/Brass */
     color: #333;
     border: none;
     padding: 10px 15px;
@@ -115,11 +115,28 @@ footer {
 }
 
 #search-btn:hover {
-    background-color: #A1887F; /* Muted Darker Brown for hover (kept) */
+    background-color: #A1887F; /* Muted Darker Brown for hover */
 }
 
 /* Book Viewer Styling (on browse.html) */
 #book-viewer {
     background-color: #FFF8E1 !important; /* New: Very Pale Cream */
     border: 1px solid #A0522D !important; /* Border matches the new Terracotta primary color */
+}
+
+/* Styling for the CTA link (Start Browsing) to make it look like a button */
+.cta-link {
+    background-color: #8D6E63; /* Same as other buttons */
+    color: white;
+    text-decoration: none; /* Remove underline */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px; /* Add some space below the text */
+    display: inline-block; /* Allows padding and margin to work */
+}
+
+.cta-link:hover {
+    background-color: #5D4037;
 }
