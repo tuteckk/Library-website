@@ -38,14 +38,13 @@ searchInput.addEventListener('keyup', filterBooks);
 
 
 // ===================================
-// 2. EXISTING CTA BUTTON LOGIC
-// (Scrolls to the book list on click)
+// 2. UPDATED CTA BUTTON LOGIC
+// (Navigates to the book list page on click)
 // ===================================
 
 function handleCtaClick() {
-    document.getElementById('featured-books').scrollIntoView({
-        behavior: 'smooth'
-    });
+    // UPDATED: Now navigates to the browse page instead of scrolling
+    window.location.href = 'browse.html';
     console.log("User started browsing!");
 }
 
